@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Login Designer — Seasonal Backgrounds
  * Plugin URI: https://logindesigner.com
- * Description: Add seasonal backgrounds to your Login Designer background gallery.
+ * Description: Add seasonal backgrounds to the Login Designer background image gallery.
  * Author: Rich Tabor of ThemeBeans.com
  * Author URI: https://logindesigner.com
  * Version: @@pkg.version
@@ -173,26 +173,27 @@ if ( ! class_exists( 'Login_Designer_Seasonal_Backgrounds' ) ) :
 
 			$image_dir  = LOGIN_DESIGNER_SEASONAL_BACKGROUNDS_PLUGIN_URL . 'assets/images/';
 
+			// Change the "winter-01" key and leave the background images in the plugin folder (at least for month or so).
 			$seasonal_backgrounds = array(
-				'christmas-01' => array(
-					'title' => esc_html__( 'Christmas 01', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'christmas-01-sml.jpg',
+				'winter-01' => array(
+					'title' => esc_html__( 'Seasonal 01', '@@textdomain' ),
+					'image' => esc_url( $image_dir ) . 'winter-01-sml.jpg',
 				),
-				'christmas-02' => array(
-					'title' => esc_html__( 'Christmas 02', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'christmas-02-sml.jpg',
+				'winter-02' => array(
+					'title' => esc_html__( 'Seasonal 02', '@@textdomain' ),
+					'image' => esc_url( $image_dir ) . 'winter-02-sml.jpg',
 				),
-				'christmas-03' => array(
-					'title' => esc_html__( 'Christmas 03', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'christmas-03-sml.jpg',
+				'winter-03' => array(
+					'title' => esc_html__( 'Seasonal 03', '@@textdomain' ),
+					'image' => esc_url( $image_dir ) . 'winter-03-sml.jpg',
 				),
-				'christmas-04' => array(
-					'title' => esc_html__( 'Christmas 04', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'christmas-04-sml.jpg',
+				'winter-04' => array(
+					'title' => esc_html__( 'Seasonal 04', '@@textdomain' ),
+					'image' => esc_url( $image_dir ) . 'winter-04-sml.jpg',
 				),
-				'christmas-05' => array(
-					'title' => esc_html__( 'Christmas 05', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'christmas-05-sml.jpg',
+				'winter-05' => array(
+					'title' => esc_html__( 'Seasonal 05', '@@textdomain' ),
+					'image' => esc_url( $image_dir ) . 'winter-05-sml.jpg',
 				),
 			);
 

@@ -1,0 +1,50 @@
+# Copyright (C) 2017 Login Designer Seasonal Backgrounds
+# This file is distributed under the same license as the Login Designer Seasonal Backgrounds package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Login Designer Seasonal Backgrounds\n"
+"Report-Msgid-Bugs-To: https://logindesigner.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Login Designer <rich@logindesigner.com>\n"
+"Language-Team: Login Designer <rich@logindesigner.com>\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+
+#: includes/admin/admin-action-links.php:37
+msgid "%1$s Select Background %2$s"
+msgstr ""
+
+#: includes/class-login-designer-seasonal-backgrounds-notice.php:86
+msgid "Please install and activate <a href=\"%s\" target=\"_blank\">Login Designer</a> to use any Login Designer extensions."
+msgstr ""
+
+#: login-designer-seasonal-backgrounds.php:101, login-designer-seasonal-backgrounds.php:113
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: login-designer-seasonal-backgrounds.php:179
+msgid "Seasonal 01"
+msgstr ""
+
+#: login-designer-seasonal-backgrounds.php:183
+msgid "Seasonal 02"
+msgstr ""
+
+#: login-designer-seasonal-backgrounds.php:187
+msgid "Seasonal 03"
+msgstr ""
+
+#: login-designer-seasonal-backgrounds.php:191
+msgid "Seasonal 04"
+msgstr ""
+
+#: login-designer-seasonal-backgrounds.php:195
+msgid "Seasonal 05"
+msgstr ""

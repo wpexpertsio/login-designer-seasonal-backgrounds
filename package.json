@@ -1,0 +1,11 @@
+{
+  "name": "Login Designer Reset",
+  "slug": "login-designer-reset",
+  "textdomain": "login-designer-reset",
+  "version": "1.0.0",
+  "downloadid": "null",
+  "description": "Reset and clear all Login Designer styles within the Customizer.",
+  "author": "Login Designer <rich@logindesigner.com>",
+  "author_uri": "https://logindesigner.com",
+  "license": "http://www.gnu.org/licenses/gpl-2.0.html GNU Public License"
+}

@@ -17,10 +17,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 
-#: includes/admin/admin-action-links.php:37
-msgid "%1$s Select Background %2$s"
-msgstr ""
-
 #: includes/class-login-designer-seasonal-backgrounds-notice.php:86
 msgid "Please install and activate <a href=\"%s\" target=\"_blank\">Login Designer</a> to use any Login Designer extensions."
 msgstr ""
@@ -29,22 +25,22 @@ msgstr ""
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: login-designer-seasonal-backgrounds.php:179
+#: login-designer-seasonal-backgrounds.php:175
 msgid "Seasonal 01"
 msgstr ""
 
-#: login-designer-seasonal-backgrounds.php:183
+#: login-designer-seasonal-backgrounds.php:179
 msgid "Seasonal 02"
 msgstr ""
 
-#: login-designer-seasonal-backgrounds.php:187
+#: login-designer-seasonal-backgrounds.php:183
 msgid "Seasonal 03"
 msgstr ""
 
-#: login-designer-seasonal-backgrounds.php:191
+#: login-designer-seasonal-backgrounds.php:187
 msgid "Seasonal 04"
 msgstr ""
 
-#: login-designer-seasonal-backgrounds.php:195
+#: login-designer-seasonal-backgrounds.php:191
 msgid "Seasonal 05"
 msgstr ""

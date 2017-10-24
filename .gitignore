@@ -4,6 +4,8 @@ node_modules
 *.map
 .DS_Store
 TODO
+.ftppass
+dist/
 *.sublime-project
 *.sublime-workspace
-dist/login-designer-seasonal-backgrounds.zip
+

@@ -148,10 +148,6 @@ if ( ! class_exists( 'Login_Designer_Seasonal_Backgrounds' ) ) :
 		 */
 		private function includes() {
 			require_once LOGIN_DESIGNER_SEASONAL_BACKGROUNDS_PLUGIN_DIR . 'includes/class-login-designer-seasonal-backgrounds-notice.php';
-
-			if ( is_admin() ) {
-				require_once LOGIN_DESIGNER_SEASONAL_BACKGROUNDS_PLUGIN_DIR . 'includes/admin/admin-action-links.php';
-			}
 		}
 
 		/**

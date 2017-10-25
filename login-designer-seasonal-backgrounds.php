@@ -156,7 +156,14 @@ if ( ! class_exists( 'Login_Designer_Seasonal_Backgrounds' ) ) :
 		 * @return void
 		 */
 		public function filters() {
+			// Actions.
+			add_action( 'login_enqueue_scripts', array( $this, 'customizer_css' ) );
+
+			// Filters.
 			add_filter( 'login_designer_backgrounds', array( $this, 'seasonal_backgrounds' ) );
+			add_filter( 'login_designer_extension_background_options', array( $this, 'extended_backgrounds_array' ) );
+			add_filter( 'login_designer_control_localization', array( $this, 'control_localization' ) );
+			add_filter( 'login_designer_customize_preview_localization', array( $this, 'preview_localization' ) );
 		}
 
 		/**
@@ -171,25 +178,25 @@ if ( ! class_exists( 'Login_Designer_Seasonal_Backgrounds' ) ) :
 
 			// Change the "winter-01" key and leave the background images in the plugin folder (at least for month or so).
 			$seasonal_backgrounds = array(
-				'winter-01' => array(
+				'seasonal-winter-01' => array(
 					'title' => esc_html__( 'Seasonal 01', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'winter-01-sml.jpg',
+					'image' => esc_url( $image_dir ) . 'seasonal-winter-01-sml.jpg',
 				),
-				'winter-02' => array(
+				'seasonal-winter-02' => array(
 					'title' => esc_html__( 'Seasonal 02', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'winter-02-sml.jpg',
+					'image' => esc_url( $image_dir ) . 'seasonal-winter-02-sml.jpg',
 				),
-				'winter-03' => array(
+				'seasonal-winter-03' => array(
 					'title' => esc_html__( 'Seasonal 03', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'winter-03-sml.jpg',
+					'image' => esc_url( $image_dir ) . 'seasonal-winter-03-sml.jpg',
 				),
-				'winter-04' => array(
+				'seasonal-winter-04' => array(
 					'title' => esc_html__( 'Seasonal 04', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'winter-04-sml.jpg',
+					'image' => esc_url( $image_dir ) . 'seasonal-winter-04-sml.jpg',
 				),
-				'winter-05' => array(
+				'seasonal-winter-05' => array(
 					'title' => esc_html__( 'Seasonal 05', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'winter-05-sml.jpg',
+					'image' => esc_url( $image_dir ) . 'seasonal-winter-05-sml.jpg',
 				),
 			);
 
@@ -197,6 +204,133 @@ if ( ! class_exists( 'Login_Designer_Seasonal_Backgrounds' ) ) :
 			$backgrounds = array_merge( $backgrounds, $seasonal_backgrounds );
 
 			return $backgrounds;
+		}
+
+		/**
+		 * Option titles.
+		 *
+		 * @return array of default fonts, plus the new typekit additions.
+		 */
+		public function options() {
+
+			// Change the colors whenever needed.
+			$options = array(
+				'seasonal_option_01' => 'seasonal-winter-01',
+				'seasonal_option_02' => 'seasonal-winter-02',
+				'seasonal_option_03' => 'seasonal-winter-03',
+				'seasonal_option_04' => 'seasonal-winter-04',
+				'seasonal_option_05' => 'seasonal-winter-05',
+			);
+
+			return $options;
+		}
+
+		/**
+		 * Filters currrent backgrounds options and adds new backgrounds.
+		 *
+		 * @param  array $backgrounds Current backgrounds.
+		 * @return array of default fonts, plus the new typekit additions.
+		 */
+		public function extended_backgrounds_array( $backgrounds ) {
+
+			// Get the option values.
+			$options = $this->options();
+
+			// Combine the two arrays.
+			$backgrounds = array_merge( $backgrounds, $options );
+
+			return $backgrounds;
+		}
+
+		/**
+		 * Adds corresponding seasonal option titles and background colors for the controls javascript file.
+		 *
+		 * @param  array $localize Default control localization.
+		 * @return array of default fonts, plus the new typekit additions.
+		 */
+		public function control_localization( $localize ) {
+
+			// Get the option values.
+			$options = $this->options( '' );
+
+			// Change the colors whenever needed.
+			$colors = array(
+				'seasonal_bg_color_01' => '#dfe0e2',
+				'seasonal_bg_color_02' => '#131522',
+				'seasonal_bg_color_03' => '#cad1de',
+				'seasonal_bg_color_04' => '#1f2214',
+				'seasonal_bg_color_05' => '#dadad8',
+			);
+
+			// Combine the three arrays.
+			$localize = array_merge( $localize, $options, $colors );
+
+			return $localize;
+		}
+
+		/**
+		 * Enqueue the stylesheets required.
+		 *
+		 * @access public
+		 */
+		public function customizer_css() {
+
+			// Get the options.
+			$options = get_option( 'login_designer' );
+
+			// Start CSS Variable.
+			$css = '';
+
+			if ( ! empty( $options ) ) :
+
+				// Background image gallery. Only display if there's no custom background image.
+				if ( isset( $options['bg_image_gallery'] ) && 'none' !== $options['bg_image_gallery'] && empty( $options['bg_image'] ) ) {
+
+					$extension_backgrounds = null;
+
+					// Check first if one of this extension's background is selected.
+					if ( in_array( $options['bg_image_gallery'], $this->options(), true ) ) {
+
+						$image_dir = LOGIN_DESIGNER_SEASONAL_BACKGROUNDS_PLUGIN_URL . 'assets/images/';
+
+						// Get the image's url.
+						$url = $image_dir . $options['bg_image_gallery'] . '.jpg';
+
+						$css .= 'body.login, #login-designer-background { background-image: url(" ' . esc_url( $url ) . ' "); }';
+					}
+				}
+
+				// Combine the values from above and minifiy them.
+				$css = preg_replace( '#/\*.*?\*/#s', '', $css );
+				$css = preg_replace( '/\s*([{}|:;,])\s+/', '$1', $css );
+				$css = preg_replace( '/\s\s+(.*)/', '$1', $css );
+
+				// Add inline style.
+				wp_add_inline_style( 'login', wp_strip_all_tags( $css ) );
+
+			endif;
+		}
+
+		/**
+		 * Adds corresponding seasonal background colors for preview javascript file.
+		 *
+		 * @param  array $localize Default control localization.
+		 * @return array of default fonts, plus the new typekit additions.
+		 */
+		public function preview_localization( $localize ) {
+
+			// Get the option values.
+			$options = $this->options();
+
+			// Change the colors whenever needed.
+			$url = array(
+				'seasonal_plugin_url' 	=> LOGIN_DESIGNER_SEASONAL_BACKGROUNDS_PLUGIN_URL . 'assets/images/',
+			);
+
+			// Combine the three arrays.
+			$localize = array_merge( $localize, $options, $url );
+
+			return $localize;
 		}
 
 		/**

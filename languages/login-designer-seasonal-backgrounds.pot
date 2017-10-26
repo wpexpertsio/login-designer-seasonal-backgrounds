@@ -25,22 +25,22 @@ msgstr ""
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: login-designer-seasonal-backgrounds.php:175
+#: login-designer-seasonal-backgrounds.php:182
 msgid "Seasonal 01"
 msgstr ""
 
-#: login-designer-seasonal-backgrounds.php:179
+#: login-designer-seasonal-backgrounds.php:186
 msgid "Seasonal 02"
 msgstr ""
 
-#: login-designer-seasonal-backgrounds.php:183
+#: login-designer-seasonal-backgrounds.php:190
 msgid "Seasonal 03"
 msgstr ""
 
-#: login-designer-seasonal-backgrounds.php:187
+#: login-designer-seasonal-backgrounds.php:194
 msgid "Seasonal 04"
 msgstr ""
 
-#: login-designer-seasonal-backgrounds.php:191
+#: login-designer-seasonal-backgrounds.php:198
 msgid "Seasonal 05"
 msgstr ""

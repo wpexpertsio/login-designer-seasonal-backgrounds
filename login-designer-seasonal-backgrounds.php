@@ -3,7 +3,7 @@
  * Plugin Name: Login Designer — Seasonal Backgrounds
  * Plugin URI: https://logindesigner.com
  * Description: Add seasonal backgrounds to the Login Designer background image gallery.
- * Author: Rich Tabor of ThemeBeans.com
+ * Author: Rich Tabor of ThemeBeans
  * Author URI: https://logindesigner.com
  * Version: @@pkg.version
  * Text Domain: @@pkg.textdomain

@@ -4,7 +4,7 @@
  *
  * The following is a derivative work from Easy Digital Downloads.
  *
- * @package   @@pkg.name
+ * @package   @@pkg.title
  * @author    @@pkg.author
  * @license   @@pkg.license
  * @version   @@pkg.version

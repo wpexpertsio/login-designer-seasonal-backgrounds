@@ -4,7 +4,7 @@
  */
 
 var pkg                     	= require('./package.json');
-var project                 	= pkg.name;
+var project                 	= pkg.title;
 var slug                    	= pkg.slug;
 var version                	= pkg.version;
 var license                	= pkg.license;
@@ -37,7 +37,7 @@ var gulp         = require('gulp');
 var cleaner      = require('gulp-clean');
 var notify       = require('gulp-notify');
 var imagemin     = require('gulp-imagemin');
-var runSequence  = require('gulp-run-sequence');
+var runSequence  = require('run-sequence');
 var copy         = require('gulp-copy');
 var sort         = require('gulp-sort');
 var replace      = require('gulp-replace-task');
@@ -106,7 +106,7 @@ gulp.task( 'build-variables', function () {
 			replacement: pkg.textdomain
 		},
 		{
-			match: 'pkg.name',
+			match: 'pkg.title',
 			replacement: project
 		},
 		{

@@ -1,4 +1,4 @@
-=== @@pkg.name ===
+=== @@pkg.title ===
 Author URI: @@pkg.author_uri
 Plugin URI: @@pkg.plugin_uri
 Contributors: ThatPluginCompany, richtabor

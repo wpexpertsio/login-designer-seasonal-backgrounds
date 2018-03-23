@@ -83,7 +83,7 @@ if ( ! class_exists( 'Login_Designer_Seasonal_Backgrounds' ) ) :
 		 */
 		public static function instance() {
 			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Login_Designer_Seasonal_Backgrounds ) ) {
-				self::$instance = new Login_Designer_Seasonal_Backgrounds;
+				self::$instance = new Login_Designer_Seasonal_Backgrounds();
 				self::$instance->constants();
 				self::$instance->actions();
 				self::$instance->load_textdomain();
@@ -170,30 +170,15 @@ if ( ! class_exists( 'Login_Designer_Seasonal_Backgrounds' ) ) :
 		 */
 		public function seasonal_backgrounds( $backgrounds ) {
 
-			$image_dir  = LOGIN_DESIGNER_SEASONAL_BACKGROUNDS_PLUGIN_URL . 'assets/images/';
+			$image_dir = LOGIN_DESIGNER_SEASONAL_BACKGROUNDS_PLUGIN_URL . 'assets/images/';
 
 			// Change the "winter-01" key and leave the background images in the plugin folder (at least for month or so).
 			$seasonal_backgrounds = array(
-				'seasonal-winter-01' => array(
-					'title' => esc_html__( 'Seasonal 01', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'seasonal-winter-01-sml.jpg',
-				),
-				'seasonal-winter-02' => array(
-					'title' => esc_html__( 'Seasonal 02', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'seasonal-winter-02-sml.jpg',
-				),
-				'seasonal-winter-03' => array(
-					'title' => esc_html__( 'Seasonal 03', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'seasonal-winter-03-sml.jpg',
-				),
-				'seasonal-winter-04' => array(
-					'title' => esc_html__( 'Seasonal 04', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'seasonal-winter-04-sml.jpg',
-				),
-				'seasonal-winter-05' => array(
-					'title' => esc_html__( 'Seasonal 05', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'seasonal-winter-05-sml.jpg',
-				),
+				'seasonal-winter-01' => esc_url( $image_dir ) . 'seasonal-winter-01-sml.jpg',
+				'seasonal-winter-02' => esc_url( $image_dir ) . 'seasonal-winter-02-sml.jpg',
+				'seasonal-winter-03' => esc_url( $image_dir ) . 'seasonal-winter-03-sml.jpg',
+				'seasonal-winter-04' => esc_url( $image_dir ) . 'seasonal-winter-04-sml.jpg',
+				'seasonal-winter-05' => esc_url( $image_dir ) . 'seasonal-winter-05-sml.jpg',
 			);
 
 			// Combine the two arrays.
@@ -320,7 +305,7 @@ if ( ! class_exists( 'Login_Designer_Seasonal_Backgrounds' ) ) :
 
 			// Change the colors whenever needed.
 			$url = array(
-				'seasonal_plugin_url' 	=> LOGIN_DESIGNER_SEASONAL_BACKGROUNDS_PLUGIN_URL . 'assets/images/',
+				'seasonal_plugin_url' => LOGIN_DESIGNER_SEASONAL_BACKGROUNDS_PLUGIN_URL . 'assets/images/',
 			);
 
 			// Combine the three arrays.
@@ -347,17 +332,18 @@ if ( ! class_exists( 'Login_Designer_Seasonal_Backgrounds' ) ) :
 			}
 
 			// Retrieve license information.
-			$handler 	= new Login_Designer_License_Handler();
-			$key 		= trim( $handler->key() );
-			$shop_url 	= esc_url( $handler->shop_url() );
-			$author 	= esc_attr( $handler->author() );
+			$handler  = new Login_Designer_License_Handler();
+			$key      = trim( $handler->key() );
+			$shop_url = esc_url( $handler->shop_url() );
+			$author   = esc_attr( $handler->author() );
 
-			$updater = new Login_Designer_Extension_Updater( $shop_url, __FILE__, array(
-					'version' 	=> self::$version,
-					'license' 	=> $key,
-					'author' 	=> $author,
-					'item_id' 	=> self::$id,
-					'beta'		=> false,
+			$updater = new Login_Designer_Extension_Updater(
+				$shop_url, __FILE__, array(
+					'version' => self::$version,
+					'license' => $key,
+					'author'  => $author,
+					'item_id' => self::$id,
+					'beta'    => false,
 				)
 			);
 		}
